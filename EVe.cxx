@@ -259,7 +259,7 @@ void EVe::CreateXprojection()
         c1->cd();
         c1->Clear();
 
-        GetVariables *HMSvar = new GetVariables("HMS.txt");
+        GetVariables *HMSvar = new GetVariables("hms_12gevchambers.txt");
 
         x1 = new WirePlane((char*)"X1",HMSvar->GetDouble("MWDC1.x.NumWires ="),
                            -0.5*cst->transLtoCL(HMSvar->GetDouble("MWDC1.Height ="))+cst->transXtoCX(0.0),
@@ -293,7 +293,7 @@ void EVe::CreateUVprojection()
         c2->cd();
         c2->Clear();
 
-        GetVariables *HMSvar = new GetVariables("HMS.txt");
+        GetVariables *HMSvar = new GetVariables("hms_12gevchambers.txt");
 
         u1 = new WirePlane((char*)"U1",HMSvar->GetDouble("MWDC1.u.NumWires ="),
                            -0.5*cst->transLtoCL(HMSvar->GetDouble("MWDC1.Height ="))+cst->transXtoCX(0.0),
@@ -324,7 +324,7 @@ void EVe::CreateYprojection()
         c4->cd();
         c4->Clear();
 
-        GetVariables *HMSvar = new GetVariables("HMS.txt");
+        GetVariables *HMSvar = new GetVariables("hms_12gevchambers.txt");
 
         y1 = new WirePlane((char*)"Y1",HMSvar->GetDouble("MWDC1.y.NumWires ="),
                            -0.5*cst->transLtoCL(HMSvar->GetDouble("MWDC1.Height ="))+cst->transXtoCX(0.0),
@@ -355,7 +355,7 @@ void EVe::CreateWires()
     c3->cd();
     c3->Clear();
 
-    GetVariables *vars = new GetVariables("HMS.txt");
+    GetVariables *vars = new GetVariables("hms_12gevchambers.txt");
     double canvasL = vars ->GetDouble("canvasL =");
     double CMWDC1X = vars ->GetDouble("canvas.MWDC1.x =");
     double CMWDC1Y = vars ->GetDouble("canvas.MWDC1.y =");
@@ -502,53 +502,53 @@ void EVe::initRun(char *filename)
     /// Branch Addresses for all root Tree leaves that are needed
 
     /// Wire Chamber Nhits
-    t1->SetBranchAddress( "Ndata.H.dc.1u1.wirenum", &Ndata_H_dc_1u1_tdchits);
-    t1->SetBranchAddress( "Ndata.H.dc.1v1.wirenum", &Ndata_H_dc_1v1_tdchits);
-    t1->SetBranchAddress( "Ndata.H.dc.2u1.wirenum", &Ndata_H_dc_2u1_tdchits);
-    t1->SetBranchAddress( "Ndata.H.dc.2v1.wirenum", &Ndata_H_dc_2v1_tdchits);
+    t1->SetBranchAddress( "Ndata.H.dc.1x1.wirenum", &Ndata_H_dc_1u1_tdchits);
+    t1->SetBranchAddress( "Ndata.H.dc.1x2.wirenum", &Ndata_H_dc_1v1_tdchits);
+    t1->SetBranchAddress( "Ndata.H.dc.2x2.wirenum", &Ndata_H_dc_2u1_tdchits);
+    t1->SetBranchAddress( "Ndata.H.dc.2x1.wirenum", &Ndata_H_dc_2v1_tdchits);
 
-    t1->SetBranchAddress( "Ndata.H.dc.1x1.wirenum", &Ndata_H_dc_1x1_tdchits);
-    t1->SetBranchAddress( "Ndata.H.dc.1x2.wirenum", &Ndata_H_dc_1x2_tdchits);
-    t1->SetBranchAddress( "Ndata.H.dc.2x1.wirenum", &Ndata_H_dc_2x1_tdchits);
-    t1->SetBranchAddress( "Ndata.H.dc.2x2.wirenum", &Ndata_H_dc_2x2_tdchits);
+    t1->SetBranchAddress( "Ndata.H.dc.1u1.wirenum", &Ndata_H_dc_1x1_tdchits);
+    t1->SetBranchAddress( "Ndata.H.dc.1v1.wirenum", &Ndata_H_dc_1x2_tdchits);
+    t1->SetBranchAddress( "Ndata.H.dc.2v1.wirenum", &Ndata_H_dc_2x1_tdchits);
+    t1->SetBranchAddress( "Ndata.H.dc.2u1.wirenum", &Ndata_H_dc_2x2_tdchits);
 
-    t1->SetBranchAddress( "Ndata.H.dc.1y1.wirenum", &Ndata_H_dc_1y1_tdchits);
-    t1->SetBranchAddress( "Ndata.H.dc.1y2.wirenum", &Ndata_H_dc_1y2_tdchits);
-    t1->SetBranchAddress( "Ndata.H.dc.2y1.wirenum", &Ndata_H_dc_2y1_tdchits);
-    t1->SetBranchAddress( "Ndata.H.dc.2y2.wirenum", &Ndata_H_dc_2y2_tdchits);
+    t1->SetBranchAddress( "Ndata.H.dc.1u2.wirenum", &Ndata_H_dc_1y1_tdchits);
+    t1->SetBranchAddress( "Ndata.H.dc.1v2.wirenum", &Ndata_H_dc_1y2_tdchits);
+    t1->SetBranchAddress( "Ndata.H.dc.2v2.wirenum", &Ndata_H_dc_2y1_tdchits);
+    t1->SetBranchAddress( "Ndata.H.dc.2u2.wirenum", &Ndata_H_dc_2y2_tdchits);
 
     /// UV Wire plane hits and hit times
-    t1->SetBranchAddress( "H.dc.1u1.wirenum", &H_dc_1u1_tdchits);
-    t1->SetBranchAddress( "H.dc.1v1.wirenum", &H_dc_1v1_tdchits);
-    t1->SetBranchAddress( "H.dc.2u1.wirenum", &H_dc_2u1_tdchits);
-    t1->SetBranchAddress( "H.dc.2v1.wirenum", &H_dc_2v1_tdchits);
+    t1->SetBranchAddress( "H.dc.1x1.wirenum", &H_dc_1u1_tdchits);
+    t1->SetBranchAddress( "H.dc.1x2.wirenum", &H_dc_1v1_tdchits);
+    t1->SetBranchAddress( "H.dc.2x2.wirenum", &H_dc_2u1_tdchits);
+    t1->SetBranchAddress( "H.dc.2x1.wirenum", &H_dc_2v1_tdchits);
 
-    t1->SetBranchAddress( "H.dc.1u1.time", &H_dc_1u1_time);
-    t1->SetBranchAddress( "H.dc.1v1.time", &H_dc_1v1_time);
-    t1->SetBranchAddress( "H.dc.2u1.time", &H_dc_2u1_time);
-    t1->SetBranchAddress( "H.dc.2v1.time", &H_dc_2v1_time);
+    t1->SetBranchAddress( "H.dc.1x1.time", &H_dc_1u1_time);
+    t1->SetBranchAddress( "H.dc.1x2.time", &H_dc_1v1_time);
+    t1->SetBranchAddress( "H.dc.2x2.time", &H_dc_2u1_time);
+    t1->SetBranchAddress( "H.dc.2x1.time", &H_dc_2v1_time);
 
     /// X Wire plane hits and hit times
-    t1->SetBranchAddress( "H.dc.1x1.wirenum", &H_dc_1x1_tdchits);
-    t1->SetBranchAddress( "H.dc.1x2.wirenum", &H_dc_1x2_tdchits);
-    t1->SetBranchAddress( "H.dc.2x1.wirenum", &H_dc_2x1_tdchits);
-    t1->SetBranchAddress( "H.dc.2x2.wirenum", &H_dc_2x2_tdchits);
+    t1->SetBranchAddress( "H.dc.1u1.wirenum", &H_dc_1x1_tdchits);
+    t1->SetBranchAddress( "H.dc.1v1.wirenum", &H_dc_1x2_tdchits);
+    t1->SetBranchAddress( "H.dc.2v1.wirenum", &H_dc_2x1_tdchits);
+    t1->SetBranchAddress( "H.dc.2u1.wirenum", &H_dc_2x2_tdchits);
 
-    t1->SetBranchAddress( "H.dc.1x1.time", &H_dc_1x1_time);
-    t1->SetBranchAddress( "H.dc.1x2.time", &H_dc_1x2_time);
-    t1->SetBranchAddress( "H.dc.2x1.time", &H_dc_2x1_time);
-    t1->SetBranchAddress( "H.dc.2x2.time", &H_dc_2x2_time);
+    t1->SetBranchAddress( "H.dc.1u1.time", &H_dc_1x1_time);
+    t1->SetBranchAddress( "H.dc.1v1.time", &H_dc_1x2_time);
+    t1->SetBranchAddress( "H.dc.2v1.time", &H_dc_2x1_time);
+    t1->SetBranchAddress( "H.dc.2u1.time", &H_dc_2x2_time);
 
     /// Y Wire plane hits and hit times
-    t1->SetBranchAddress( "H.dc.1y1.wirenum", &H_dc_1y1_tdchits);
-    t1->SetBranchAddress( "H.dc.1y2.wirenum", &H_dc_1y2_tdchits);
-    t1->SetBranchAddress( "H.dc.2y1.wirenum", &H_dc_2y1_tdchits);
-    t1->SetBranchAddress( "H.dc.2y2.wirenum", &H_dc_2y2_tdchits);
+    t1->SetBranchAddress( "H.dc.1u2.wirenum", &H_dc_1y1_tdchits);
+    t1->SetBranchAddress( "H.dc.1v2.wirenum", &H_dc_1y2_tdchits);
+    t1->SetBranchAddress( "H.dc.2v2.wirenum", &H_dc_2y1_tdchits);
+    t1->SetBranchAddress( "H.dc.2u2.wirenum", &H_dc_2y2_tdchits);
 
-    t1->SetBranchAddress( "H.dc.1y1.time", &H_dc_1y1_time);
-    t1->SetBranchAddress( "H.dc.1y2.time", &H_dc_1y2_time);
-    t1->SetBranchAddress( "H.dc.2y1.time", &H_dc_2y1_time);
-    t1->SetBranchAddress( "H.dc.2y2.time", &H_dc_2y2_time);
+    t1->SetBranchAddress( "H.dc.1u2.time", &H_dc_1y1_time);
+    t1->SetBranchAddress( "H.dc.1v2.time", &H_dc_1y2_time);
+    t1->SetBranchAddress( "H.dc.2v2.time", &H_dc_2y1_time);
+    t1->SetBranchAddress( "H.dc.2u2.time", &H_dc_2y2_time);
 
     /// TRACKS
     t1->SetBranchAddress( "Ndata.H.tr.x", &Ndata_H_tr_x);
@@ -561,7 +561,7 @@ void EVe::initRun(char *filename)
     /// Scint Planes
     /// TDC hits for all planes -- pos = left PMT, neg = right PMT
 
-    //GetVariables* HMS = new GetVariables("HMS.txt");
+    //GetVariables* HMS = new GetVariables("hms_12gevchambers.txt");
 
     /// S1X
     t1->SetBranchAddress( "Ndata.H.hod.1x.negTdcCounter", &Ndata_H_hod_1x_negtdchits);
@@ -771,7 +771,7 @@ void EVe::DoDraw(int event)
 
         mwdc1->clear();
 
-        GetVariables* HMSvars= new GetVariables("HMS.txt");
+        GetVariables* HMSvars= new GetVariables("hms_12gevchambers.txt");
 
         int x1NW= HMSvars->GetInt("MWDC1.x.NumWires =");
         int v1NW= HMSvars->GetInt("MWDC1.v.NumWires =");
@@ -899,7 +899,7 @@ void EVe::DoDraw(int event)
 
         if (Ndata_H_tr_x > 0 && fTextButtonTrack->IsOn()) {
             for(int q =0; q<Ndata_H_tr_x; q++) {
-                GetVariables *hms = new GetVariables("HMS.txt");
+                GetVariables *hms = new GetVariables("hms_12gevchambers.txt");
                 double z1 = hms->GetDouble("MWDC2.z =");
                 double z3 = hms->GetDouble("s1x.z =");
                 double z4 = hms->GetDouble("s1y.z =");
@@ -967,7 +967,7 @@ void EVe::DoDraw(int event)
         title->Draw();
 
         //***************** First chamber
-        GetVariables* HMSvars= new GetVariables("HMS.txt");
+        GetVariables* HMSvars= new GetVariables("hms_12gevchambers.txt");
         int x1NW= HMSvars->GetInt("MWDC1.x.NumWires =");
         int v1NW= HMSvars->GetInt("MWDC1.v.NumWires =");
         int y1NW= HMSvars->GetInt("MWDC1.y.NumWires =");
