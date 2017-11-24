@@ -169,7 +169,7 @@ s1x.angle = 0.0
 s1x.PN = 16
 
 /// Position and tilt of the center of the dE-plane
-s1x.xpos = 129.865
+s1x.xpos = 77.83
 s1x.ypos = 0.0
 s1x.zpos = 0.0
 s1x.PaddleLength = 75.5
@@ -186,7 +186,7 @@ s2x.angle = 0.0
 s2x.PN = 16
 
 /// Position and tilt of the center of the dE-plane
-s2x.xpos = 350.855
+s2x.xpos = 298.82
 s2x.ypos = 0.0
 s2x.zpos = 0.0
 s2x.PaddleLength = 75.5
@@ -203,7 +203,7 @@ s1y.angle = 90.0
 s1y.PN = 10
 
 /// Position and tilt of the center of the E-plane
-s1y.xpos =149.555
+s1y.xpos =97.52
 s1y.ypos = 0.0
 s1y.zpos = 0.0
 s1y.PaddleLength = 120.0
@@ -219,7 +219,7 @@ s2y.angle = 90.0
 s2y.PN = 10
 
 /// Position and tilt of the center of the E-plane
-s2y.xpos = 370.545
+s2y.xpos = 318.51
 s2y.ypos = 0.0
 s2y.zpos = 0.0
 s2y.PaddleLength = 120.0
