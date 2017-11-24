@@ -206,7 +206,7 @@ s1y.PN = 10
 s1y.xpos =97.52
 s1y.ypos = 0.0
 s1y.zpos = 0.0
-s1y.PaddleLength = 120.0
+s1y.PaddleLength = 120.5
 s1y.PaddleHeight = 7.53
 s1y.PaddleThickness = 1.067
 s1y.tilt = 0.0
@@ -222,16 +222,17 @@ s2y.PN = 10
 s2y.xpos = 318.51
 s2y.ypos = 0.0
 s2y.zpos = 0.0
-s2y.PaddleLength = 120.0
+s2y.PaddleLength = 120.5
 s2y.PaddleHeight = 7.53
 s2y.PaddleThickness = 1.067
 s2y.tilt = 0.0
 
+//Calorimeter variables
 
 // c1pr-plane variables
 c1pr.angle = 0.0
 c1pr.PN = 13
-c1pr.xpos = 412.03
+c1pr.xpos = 338.69
 c1pr.ypos = 0.0
 c1pr.zpos = 0.44
 c1pr.PaddleLength = 70.0
@@ -242,7 +243,7 @@ c1pr.tilt = 5.0
 // c2ta-plane variables
 c2ta.angle = 0.0
 c2ta.PN = 13
-c2ta.xpos = 421.99
+c2ta.xpos = 349.69
 c2ta.ypos = 0.0
 c2ta.zpos = 1.31
 c2ta.PaddleLength = 70.0
@@ -253,7 +254,7 @@ c2ta.tilt = 5.0
 // c3ta-plane variables
 c3ta.angle = 0.0
 c3ta.PN = 13
-c3ta.xpos = 431.95
+c3ta.xpos = 360.69
 c3ta.ypos = 0.0
 c3ta.zpos = 2.18
 c3ta.PaddleLength = 70.0
@@ -264,7 +265,7 @@ c3ta.tilt = 5.0
 // c4ta-plane variables
 c4ta.angle = 0.0
 c4ta.PN = 13
-c4ta.xpos =  441.91
+c4ta.xpos =  371.69
 c4ta.ypos = 0.0
 c4ta.zpos = 3.05
 c4ta.PaddleLength = 70.0
