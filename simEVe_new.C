@@ -1,7 +1,8 @@
 {
   /// Macro for running EVe with hodtest.root . Can easily be updated to work with any compatible .root file, or dynamically input as in simEVe.C    ///
 
-  #include <TGClient.h>
+#include <TGClient.h>
+
   gSystem->Load("libGeom");
   gSystem->Load("libEVe.so");
   
@@ -24,7 +25,7 @@
     path=paths;
     
     while ( path && *path ) {
-      sprintf(filename,"hodtest.root");
+      sprintf(filename,"hms_replay_production_859_-1.root");
       fd = fopen(filename,"r");
       if (fd != NULL) {
 	found = 1;
