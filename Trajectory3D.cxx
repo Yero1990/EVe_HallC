@@ -44,7 +44,7 @@ Trajectory3D::~Trajectory3D()
 //    be looked at here either.
 void Trajectory3D::Enable(int n, double x, double y, double theta, double phi)
 {
-    GetVariables* HMS= new GetVariables("HMS.txt");
+    GetVariables* HMS= new GetVariables("hms_12gevchambers.txt");
 
     double xdiff = HMS-> GetDouble("MWDC2.xPos =")- HMS-> GetDouble("MWDC1.xPos =");
     double ydiff = HMS-> GetDouble("MWDC2.yPos =")- HMS-> GetDouble("MWDC1.yPos =");
