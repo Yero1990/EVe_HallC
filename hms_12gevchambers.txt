@@ -65,8 +65,8 @@ y2p.dist = 0.847375
 //MWDC1 stats
 //Height and Width use units m, and Thickness and WallThickness use units cm, since there is a unit conversion between
 // 2D view and 3D view
-MWDC1.Height = 1.0
-MWDC1.Width = 0.50
+MWDC1.Height = 1.02
+MWDC1.Width = 0.520
 MWDC1.Thickness = 4.0
 MWDC1.WallThickness = 2.0
 MWDC1.xPos = -52.0954
@@ -113,8 +113,8 @@ MWDC1.xp.Dist = 3.4925
 
 
 //MWDC-2 stats
-MWDC2.Height = 1.0
-MWDC2.Width = 0.50
+MWDC2.Height = 1.02
+MWDC2.Width = 0.520
 MWDC2.Thickness = 4.0
 MWDC2.WallThickness = 2.0
 MWDC2.xPos = 29.2608
